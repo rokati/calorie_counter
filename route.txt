@@ -1,0 +1,58 @@
+Calorie counter
+- index.html - login form
+- register.html - register
+- forgotten_password.html
+- calorie_counter.html
+- ingredient.html
+- meal.html
+- reciept.html
+- registration.html
+
+Routing
+
+GET /                   - index.html
+    renderMW
+
+POST /login
+    loginMW
+
+GET /register           - register.html
+    registerMW
+    renderMW
+
+GET, POST /forgot_password    - forgotten_password.html
+    getNewPasswordMW
+    renderMW
+
+POST /logout
+    logOutMW
+
+GET /today_calories     - calorie_counter.html
+    authMW
+    getTodayMeals
+    getTodayCalories
+    renderMW
+
+GET /reciept            
+    authMW
+    getRecieptsMW
+
+POST /reciept/add_ingredient
+    authMW
+    addIngredientMW
+
+GET, POST /reciept/new  - reciept.html
+    authMW
+    getIngredientsMW
+    createRecieptMW
+    renderMW
+
+GET, POST /ingredient         - ingredient.html
+    authMW
+    createNewIngredientMW
+    renderMW
+
+GET, POST /meal               - meal.html
+    authMW
+    addNewMealMW
+    renderMW

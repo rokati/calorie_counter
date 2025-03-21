@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg text-dark">
+    <!-- Navbar -->
+    <nav class="navbar navbar bg p-3">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Calorie Counter</span>
+            <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  User Name
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="index.html">Log out</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4 d-flex justify-content-center align-items-center">
+        <div class="card shadow-lg p-4 text-ce" style="width: 350px;">
+            <h3 class="text-center mb-4">Create ingredient</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="carbs" class="form-label">Carbs</label>
+                    <input type="number" class="form-control" id="carbs" placeholder="Enter contained carbs" required>
+                </div>
+                <div class="mb-3">
+                    <label for="protein" class="form-label">Protein</label>
+                    <input type="number" class="form-control" id="protein" placeholder="Enter contained protein" required>
+                </div>
+                <div class="mb-3">
+                    <label for="fat" class="form-label">Fat</label>
+                    <input type="number" class="form-control" id="fat" placeholder="Enter contained fat" required>
+                </div>
+                <a href="receipt.html" class="btn btn-dark w-100" onlclick="location.href = 'reciept.html'">Add ingredient</a>
+            </form>
+        </div>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
