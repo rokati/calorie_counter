@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+app.set('view engine', 'ejs');
 
 const subscireToRoutes = require('./routing/index.js');
 

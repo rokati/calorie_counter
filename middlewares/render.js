@@ -3,8 +3,8 @@
  * @param objRepo 
  * @returns {function(*, *, *): *}
  */
-module.exports = (objRepo) => {
+module.exports = (objRepo, view) => {
     return (req, res) => {
-        return next();
+        res.render(view,{});
     }
 };
