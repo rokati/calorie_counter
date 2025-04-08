@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
+
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 const subscireToRoutes = require('./routing/index.js');
 
