@@ -4,7 +4,7 @@
  * @returns {function(*, *, *): *}
  */
 module.exports = (objRepo, view) => {
-    return (req, res) => {
+    return (req, res, next) => {
         return next();
     }
 };

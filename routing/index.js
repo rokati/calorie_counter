@@ -26,6 +26,7 @@ function subscireToRoutes (app) {
     app.post('/forgot_password', getNewPasswordMW(objRepo));
     app.get('/calorie_counter', authMW(objRepo), getTodaysCaloriesMW(objRepo), getTodaysMealsMW(objRepo), renderMW(objRepo, 'calorie_counter'));
     app.post('/reciept/add_ingredient', authMW(objRepo), addIngredientMW(objRepo));
+    app.get('/reciept/delete_ingredient/:id', authMW(objRepo)); /** TODO: megcsinálni a törlés funkciót az ingredienthez*/
     app.get('/reciept/new', authMW(objRepo), getIngredientMW(objRepo), renderMW(objRepo, 'reciept'));
     app.post('/reciept/new', authMW(objRepo), createReceiptMW(objRepo));
     app.get('/ingredient', authMW(objRepo), renderMW(objRepo, 'ingredient'));
