@@ -7,6 +7,7 @@ const Receipt = db.model('Receipt', {
     _ingredientId: { type: Schema.Types.ObjectId, ref: 'Ingredient' },
     amount: Number,
   }],
+  calories: Number,
 });
 
 module.exports = Receipt;

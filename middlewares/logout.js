@@ -5,6 +5,12 @@
  */
 module.exports = (objRepo) => {
     return (req, res, next) => {
-        return next();
+        return req.session.destroy((err) => {
+            if (err) {
+                return next(err);
+            }
+            req.session = null;
+            return res.redirect('/');
+        });
     }
 };

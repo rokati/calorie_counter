@@ -7,12 +7,14 @@
                 <!-- Buttons -->
                 <div class="container mb-4">
                     <div class="row mb-4">
-                        <button class="btn btn-dark me-2" onclick="location.href = '/reciept/new'">Create New Meal</button>
+                        <button class="btn btn-dark me-2" onclick="location.href = '/ingredient'">Create New Ingredient</button>
+                    </div>
+                    <div class="row mb-4">
+                        <button class="btn btn-dark me-2" onclick="location.href = '/reciept/new'">Create New Receipt</button>
                     </div>
                     <div class="row">
                         <button class="btn btn-dark" onclick="location.href = '/meal'">Add Meal</button>
                     </div>
-                    
                 </div>
             </div>
             <div class="col-5">
@@ -21,19 +23,19 @@
                     <h4 class="text-center">Today's Summary</h4>
                     <div class="card bg p-3 my-2">
                         <h5>Calories consumed</h5>
-                        <p>2100/1555 kcal</p>
+                        <p><%= user.goal_calories %>/<%= todaysCalories %> kcal</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Carbs consumed</h5>
-                        <p>50 g</p>
+                        <p><%= todaysCarbs %> g</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Protein consumed</h5>
-                        <p>50 g</p>
+                        <p><%= todaysProtein %> g</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Fat consumed</h5>
-                        <p>50 g</p>
+                        <p><%= todaysFat %> g</p>
                     </div>
                 </div> 
             </div>
@@ -41,10 +43,17 @@
                 <!-- Today's Meals -->
                 <div class="card bg text-dark p-3">
                     <h4 class="text-center">Today's Meals</h4>
-                    <div class="card bg p-3 my-2">
-                        <h5>Palacsinta</h5>
-                        <p>1555 kcal</p>
-                    </div>
+                    <% for (let meal of todaysMeals) { %>
+                        <div class="card bg p-3 my-2">
+                            <h5><%= meal.name %></h5>
+                            <p><%= meal.calories %> kcal</p>
+                        </div>
+                    <% } %>
+                    <% if (todaysMeals.length === 0) { %>
+                        <div class="card bg p-3 my-2">
+                            <p>No meals added yet.</p>
+                        </div>
+                    <% } %>
                 </div>
             </div>
         </div>

@@ -1,13 +1,20 @@
 <!-- Navbar -->
 <nav class="navbar navbar bg p-3">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Calorie Counter</span>
+        
+        <a class="navbar-brand" href="/calorie_counter"><span class="navbar-brand mb-0 h1">Calorie Counter</span></a>
         <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                User Name
+                <%= username %>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="index.html">Log out</a></li>
+                <li>
+                    <form action="/logout" method="POST" style="display: inline;">
+                        <button type="submit" class="dropdown-item" style="border: none; background: none; padding: 1; cursor: pointer;">
+                            Log out
+                        </button>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

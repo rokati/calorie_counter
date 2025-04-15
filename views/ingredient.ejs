@@ -8,7 +8,7 @@
                   User Name
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="index.html">Log out</a></li>
+                  <li><a class="dropdown-item" href="/">Log out</a></li><!-- TODO logotutra menjen és redirectelje loginra -->
                 </ul>
             </div>
         </div>
@@ -18,24 +18,24 @@
     <div class="container mt-4 d-flex justify-content-center align-items-center">
         <div class="card shadow-lg p-4 text-ce" style="width: 350px;">
             <h3 class="text-center mb-4">Create ingredient</h3>
-            <form>
+            <form action="/ingredient/new" method="POST">
                 <div class="mb-3">
                     <label for="email" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter name" required>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
                 </div>
                 <div class="mb-3">
                     <label for="carbs" class="form-label">Carbs</label>
-                    <input type="number" class="form-control" id="carbs" placeholder="Enter contained carbs" required>
+                    <input type="number" class="form-control" id="carbs" name="carbs" placeholder="Enter contained carbs" required>
                 </div>
                 <div class="mb-3">
                     <label for="protein" class="form-label">Protein</label>
-                    <input type="number" class="form-control" id="protein" placeholder="Enter contained protein" required>
+                    <input type="number" class="form-control" id="protein" name="protein" placeholder="Enter contained protein" required>
                 </div>
                 <div class="mb-3">
                     <label for="fat" class="form-label">Fat</label>
-                    <input type="number" class="form-control" id="fat" placeholder="Enter contained fat" required>
+                    <input type="number" class="form-control" id="fat" name="fat" placeholder="Enter contained fat" required>
                 </div>
-                <a href="/reciept/new" class="btn btn-dark w-100" onlclick="location.href = 'reciept.html'">Add ingredient</a>
+                <button type="submit" class="btn btn-dark w-100">Create ingredient</button>
             </form>
         </div>
     </div>

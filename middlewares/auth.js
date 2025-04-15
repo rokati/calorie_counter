@@ -5,6 +5,10 @@
  */
 module.exports = (objRepo, view) => {
     return (req, res, next) => {
-        return next();
+        if (typeof req.session.username === 'undefined') {
+            return res.redirect('/');
+        }
+        res.locals.username = req.session.username;
+        next();
     }
 };
