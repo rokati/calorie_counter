@@ -49,7 +49,6 @@ function subscireToRoutes (app) {
     app.post(
         '/register',
         registerMW(objRepo));
-
     app.get(
         '/forgot_password', 
         renderMW(objRepo, 'forgotten_password'));
@@ -65,9 +64,6 @@ function subscireToRoutes (app) {
         '/reciept/add_ingredient', 
         authMW(objRepo), 
         addIngredientMW(objRepo));
-    app.get(
-        '/reciept/delete_ingredient/:id', 
-        authMW(objRepo)); /** TODO: megcsinálni a törlés funkciót az ingredienthez*/
     app.get(
         '/reciept/new', 
         authMW(objRepo), 
@@ -87,12 +83,12 @@ function subscireToRoutes (app) {
         createIngredientMW(objRepo));
     app.get(
         '/meal', 
-        authMW(objRepo), 
-        getReceiptsMW(objRepo), 
+        authMW(objRepo),
+        getReceiptsMW(objRepo),
         renderMW(objRepo, 'meal'));
     app.post(
-        '/meal', 
-        authMW(objRepo), 
+        '/meal/add',
+        authMW(objRepo),
         addMealMW(objRepo));
 
     app.use((err, req, res, next) => {

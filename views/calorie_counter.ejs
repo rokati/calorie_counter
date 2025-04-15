@@ -23,19 +23,19 @@
                     <h4 class="text-center">Today's Summary</h4>
                     <div class="card bg p-3 my-2">
                         <h5>Calories consumed</h5>
-                        <p><%= user.goal_calories %>/<%= todaysCalories %> kcal</p>
+                        <p><%= user.goal_calories %>/<%= user.consumed_calories %> kcal</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Carbs consumed</h5>
-                        <p><%= todaysCarbs %> g</p>
+                        <p><%= user.consumed_carbs %> g</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Protein consumed</h5>
-                        <p><%= todaysProtein %> g</p>
+                        <p><%= user.consumed_proteins %> g</p>
                     </div>
                     <div class="card bg p-3 my-2">
                         <h5>Fat consumed</h5>
-                        <p><%= todaysFat %> g</p>
+                        <p><%= user.consumed_fats %> g</p>
                     </div>
                 </div> 
             </div>
@@ -43,13 +43,13 @@
                 <!-- Today's Meals -->
                 <div class="card bg text-dark p-3">
                     <h4 class="text-center">Today's Meals</h4>
-                    <% for (let meal of todaysMeals) { %>
+                    <% for (let meal of userMeals) { %>
                         <div class="card bg p-3 my-2">
                             <h5><%= meal.name %></h5>
                             <p><%= meal.calories %> kcal</p>
                         </div>
                     <% } %>
-                    <% if (todaysMeals.length === 0) { %>
+                    <% if (userMeals.length === 0) { %>
                         <div class="card bg p-3 my-2">
                             <p>No meals added yet.</p>
                         </div>

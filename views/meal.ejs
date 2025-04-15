@@ -1,30 +1,18 @@
 <%- include('header') %>
-    <!-- Navbar -->
-    <nav class="navbar navbar bg p-3">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Calorie Counter</span>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  User Name
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="/">Log out</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<%- include('navbar') %>
 
     <!-- Main Content -->
     <div class="container mt-4 d-flex justify-content-center align-items-center">
         <div class="card shadow-lg p-4 text-ce" style="width: 350px;">
             <h3 class="text-center mb-4">Add meal</h3>
-            <form>
-                <select class="form-select mb-3" aria-label="Default select example">
+            <form action="/meal/add" method="POST">
+                <select class="form-select mb-3" name="_receiptId" aria-label="Default select example">
                     <option selected>Select a meal</option>
-                    <option value="1">Palacsinta</option>
-                    <option value="2">Pörkölt</option>
+                    <% receipts.forEach(function(receipt) { %>
+                        <option value="<%= receipt._id %>"><%= receipt.name %></option>
+                    <% }); %>
                 </select>
-                <a href="/calorie_counter" class="btn btn-dark w-100" onlclick="location.href = 'calorie_counter.html'">Add meal</a>
+                <button type="submit" class="btn btn-dark w-100">Add meal</button>
             </form>
         </div>
     </div>

@@ -6,6 +6,9 @@ const User = db.model('User', {
   password: String,
   goal_calories: Number,
   consumed_calories: Number,
+  consumed_carbs: Number,
+  consumed_proteins: Number,
+  consumed_fats: Number,
   meals: [{
     _receiptId: { type: Schema.Types.ObjectId, ref: 'Receipt' },
     date: Date,

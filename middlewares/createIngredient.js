@@ -6,7 +6,6 @@
 module.exports = (objRepo) => {
     const IngredientModel = objRepo.IngredientModel;
     return (req, res, next) => {
-        console.log('Creating new ingredient:', req.body);
         const newIngredient = new IngredientModel({
             name: req.body.name,
             carbs: req.body.carbs,
@@ -15,7 +14,6 @@ module.exports = (objRepo) => {
         });
 
         return newIngredient.save().then(() => {
-            console.log('New ingredient created:', newIngredient);
             return res.redirect('/calorie_counter');
         }).catch((err) => {
             console.error('Error creating ingredient:', err);
