@@ -7,10 +7,20 @@
                     <label for="username" class="form-label">User name</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Enter user name" required>
                 </div>
+                <% if (typeof error !== 'undefined' && error === 'User not found.') { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
+                    </div>
+                <% } %>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                 </div>
+                <% if (typeof error !== 'undefined' && error === 'Password is not correct.') { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= error %>
+                    </div>
+                <% } %>
                 <button type="submit" class="btn btn-dark w-100">Login</button>
             </form>
             <div class="text-center mt-3">
