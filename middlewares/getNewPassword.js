@@ -16,13 +16,12 @@ module.exports = (objRepo) => {
             { username: username },
             { password: newPassword },
         ).then(user => {
+            // If user is not found, handle the error
             if (!user) {
                 console.log('User not found:', username);
                 return res.status(404).send('User not found.');
             }
             console.log('New password generated for user:', user.username, 'New password:', newPassword);
-            // Send the new password to the user (this could be an email or other notification)
-            // For now, just send it in the response for demonstration purposes
             return res.redirect('/'); // Redirect to login page after successful password generation
         }).catch(err => {
             console.error('Error generating new password:', err);
